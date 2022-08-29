@@ -8,5 +8,5 @@ This project implements a basic hello world using Mbed OS Community Edition.  Us
 3. Set up the CMake project for editing.  We have three ways to do this:
     - On the [command line](https://github.com/mbed-ce/mbed-os/wiki/Project-Setup:-Command-Line)
     - Using the [CLion IDE](https://github.com/mbed-ce/mbed-os/wiki/Project-Setup:-CLion)
-    - Using the [VS Code IDE](https://github.com/mbed-ce/mbed-os/wiki/Project-Setup:-VS-Code-IDE)
+    - Using the [VS Code IDE](https://github.com/mbed-ce/mbed-os/wiki/Project-Setup:-VS-Code)
 4. Build the `flash-HelloWorld` target to upload the code to a connected device.
