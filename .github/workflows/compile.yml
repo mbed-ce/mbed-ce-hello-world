@@ -23,7 +23,7 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-            python3 -m pip install -r mbed-os/tools/requirements.txt
+            xargs sudo apt-get install -y < mbed-os/tools/requirements.apt.txt
 
       - name: Build project for ${{ matrix.mbed_target }}
         run: |
