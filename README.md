@@ -1,5 +1,6 @@
 # Mbed CE Hello World
 This project implements a basic hello world using Mbed OS Community Edition.  Use it as an example or a starting place for your own projects!
+Use the batch or bash file to compile. You need to change the project name inside the CMakeList.txt file. Under /src you can put your project files.
 
 ## How to set up this project:
 
