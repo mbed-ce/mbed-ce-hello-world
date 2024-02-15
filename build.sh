@@ -6,4 +6,3 @@ cd build;
 cmake .. -GNinja -DCMAKE_BUILD_TYPE=Develop -DMBED_TARGET=NUCLEO_F207ZG && ninja;
 #Go back to the root directory
 cd ..;
-

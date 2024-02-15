@@ -8,5 +8,3 @@ REM Run 'ninja' to start compiling the project
 ninja
 REM  go back to the root directory 
 cd ..
-REM Wait for user to press ENTER or any other key
-pause
