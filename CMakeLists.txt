@@ -6,7 +6,7 @@ cmake_policy(VERSION 3.19)
 
 # Initialize Mbed OS build system. 
 # Note: This block must be before the project() call.
-set(MBED_APP_JSON_PATH mbed_app.json)
+set(MBED_APP_JSON_PATH mbed_app.json5)
 # set(CUSTOM_TARGETS_JSON_PATH custom_targets.json) # If you need a custom target, use this line to specify the custom_targets.json
 
 include(mbed-os/tools/cmake/app.cmake) # Load Mbed CE toolchain file and basic build system
