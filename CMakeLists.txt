@@ -53,7 +53,7 @@ add_subdirectory(mbed-os)
 ######################################################################################################
 
 ### Set up your project name (necessary everytime)
-project(mbed-ce-custom-targets)
+project(MbedCEHelloWorld)
 
 ### add executable (necessary everytime)
 add_executable(${CMAKE_PROJECT_NAME} main.cpp)
