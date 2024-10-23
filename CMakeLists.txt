@@ -58,12 +58,6 @@ project(MbedCEHelloWorld)
 ### add executable (necessary everytime)
 add_executable(${CMAKE_PROJECT_NAME} main.cpp)
 
-### Set post build (necessary everytime)
-mbed_set_post_build(${CMAKE_PROJECT_NAME})
-#[[Or in case of custom linker script which should be placed like this
-   directory PROJECT_NAME/custom_targets/MBED_TARGET/MBED_TARGET.ld]]
-#mbed_set_post_build(${CMAKE_PROJECT_NAME}  ${CMAKE_SOURCE_DIR}/custom_targets/${MBED_TARGET}/${MBED_TARGET}.ld)
-
 ######################################################################################################
 ### Link libraries block
 #[[For more about this configuraion visit wiki page MbedOS-configuration
@@ -77,6 +71,12 @@ target_link_libraries(${CMAKE_PROJECT_NAME}  mbed-os)
 
 ### End of block
 ######################################################################################################
+
+### Set post build (necessary everytime)
+mbed_set_post_build(${CMAKE_PROJECT_NAME})
+#[[Or in case of custom linker script which should be placed like this
+   directory PROJECT_NAME/custom_targets/MBED_TARGET/MBED_TARGET.ld]]
+#mbed_set_post_build(${CMAKE_PROJECT_NAME}  ${CMAKE_SOURCE_DIR}/custom_targets/${MBED_TARGET}/${MBED_TARGET}.ld)
 
 ### Build finalize does necessary configuration for debug in most cases (necessary everytime)
 mbed_finalize_build()
