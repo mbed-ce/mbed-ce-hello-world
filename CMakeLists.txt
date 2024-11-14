@@ -74,9 +74,10 @@ target_link_libraries(${CMAKE_PROJECT_NAME}  mbed-os)
 
 ### Set post build (necessary everytime)
 mbed_set_post_build(${CMAKE_PROJECT_NAME})
-#[[Or in case of custom linker script which should be placed like this
-   directory PROJECT_NAME/custom_targets/MBED_TARGET/MBED_TARGET.ld]]
-#mbed_set_post_build(${CMAKE_PROJECT_NAME}  ${CMAKE_SOURCE_DIR}/custom_targets/${MBED_TARGET}/${MBED_TARGET}.ld)
 
-### Build finalize does necessary configuration for debug in most cases (necessary everytime)
+#[[ Note: if you wish to use a custom linker script instead of the default Mbed one for
+   your target, you can do that with mbed_set_post_build(${CMAKE_PROJECT_NAME} path/to/linker_script.ld) ]]
+
+### Call this last, after creating all targets.  It writes out IDE configuration files
+### so that you can run your targets in VS Code.
 mbed_finalize_build()
