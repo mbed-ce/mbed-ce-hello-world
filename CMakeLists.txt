@@ -8,15 +8,15 @@ cmake_policy(VERSION 3.19)
 ######################################################################################################
 ### Block of including .json5 files. Files of this block must be included before the app.cmake
 
-#[[ Set path of mbed_app.json (necessary everytime if mbed_app.json5 is in project) ]]
+#[[ Set path of mbed_app.json (necessary at all times) ]]
 set(MBED_APP_JSON_PATH mbed_app.json5)
 
 ###--------------------------------------------------------------------------------------------------- 
 #[[ This part is dedicated for custom targets only! Settings below activate targets from
-    custom_targets.json5 and upload method config, otherwise functions below should be commented. ]]
+    custom_targets.json5 and upload method config, otherwise lines below should be commented. ]]
 
 #[[ Here set path for custom_targets.json5 (this is our default) ]]
-#set(CUSTOM_TARGETS_JSON_PATH custom_targets/custom_targets.json5) 
+#set(CUSTOM_TARGETS_JSON_PATH custom_targets/custom_targets.json5)
 
 #[[ Here you can set path for custom upload config .cmake (optional example) ]]
 #set(CUSTOM_UPLOAD_CFG_PATH ${CMAKE_SOURCE_DIR}/${MBED_TARGET}/${MBED_TARGET}.cmake)
@@ -60,7 +60,7 @@ add_executable(${CMAKE_PROJECT_NAME} main.cpp)
 
 ######################################################################################################
 ### Link libraries block
-#[[For more about this configuraion visit wiki page MbedOS-configuration
+#[[For more about this configuration visit wiki page MbedOS-configuration
 https://github.com/mbed-ce/mbed-os/wiki/MbedOS-configuration#configuration-via-cmake-files]]
 
 #[[link MbedOS and its libraries (necessary everytime)]]
