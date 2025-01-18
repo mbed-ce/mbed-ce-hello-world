@@ -14,10 +14,11 @@ jobs:
         mbed_target: 
           # Change the below to match the target you want to compile the project for.
           - LPC1768
+          - NUCLEO_F070RB
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
 
