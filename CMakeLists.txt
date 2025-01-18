@@ -82,16 +82,13 @@ else()
 endif()
 
 ### link user library (if needed)
-#add_subdirectory(YourLibrary)
 #target_link_libraries(${PROJECT_NAME} YourLibrary)
 
 # This generates build rules to generate bin/hex files, and to flash the code if you have configured an
 # upload method.
 mbed_set_post_build(${PROJECT_NAME})
-
-### End of block
-######################################################################################################
-
 #[[ Note: if you wish to use a custom linker script instead of the default Mbed one for
    your target, you can do that with mbed_set_post_build(${PROJECT_NAME} path/to/linker_script.ld) ]]
 
+### End of block
+######################################################################################################
