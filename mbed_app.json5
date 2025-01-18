@@ -3,7 +3,15 @@
         "*": {
             // By default, use a serial baudrate of 115200 and enable buffering on the serial port.
             "platform.stdio-baud-rate": 115200,
-            "platform.stdio-buffered-serial": 1
+            "platform.stdio-buffered-serial": 1,
+
+            // Uncomment to use mbed-baremetal instead of mbed-os
+            // "target.application-profile": "bare-metal"
+        },
+
+        "NUCLEO_F070RB": {
+            "target.application-profile": "bare-metal"
         }
-    }
+    },
+
 }

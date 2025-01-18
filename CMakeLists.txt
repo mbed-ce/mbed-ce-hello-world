@@ -71,8 +71,15 @@ add_executable(${PROJECT_NAME} main.cpp)
 #[[For more about this configuration visit wiki page MbedOS-configuration
 https://github.com/mbed-ce/mbed-os/wiki/MbedOS-configuration#configuration-via-cmake-files]]
 
-#[[link MbedOS and its libraries (necessary everytime)]]
-target_link_libraries(${PROJECT_NAME} mbed-os)
+# Link Mbed OS core library. This is called mbed-os when using the Mbed RTOS, and mbed-baremetal when using
+# the bare metal version. This if statement checks to see which is in use and links it.
+# Important: The mbed-os and mbed-baremetal libraries are object libraries, so they should ONLY be
+# linked to executables, not to other libraries. Libraries should link to `mbed-core-flags` instead.
+if("MBED_CONF_TARGET_APPLICATION_PROFILE=bare-metal" IN_LIST MBED_CONFIG_DEFINITIONS)
+    target_link_libraries(${PROJECT_NAME} mbed-baremetal)
+else()
+    target_link_libraries(${PROJECT_NAME} mbed-os)
+endif()
 
 ### link user library (if needed)
 #add_subdirectory(YourLibrary)
