@@ -7,7 +7,7 @@ on: push
 jobs:
   compile:
     runs-on: ubuntu-latest
-    container: ghcr.io/armmbed/mbed-os-env:master-latest
+    container: ghcr.io/mbed-ce/mbed-ce-env:main
     
     strategy:
       matrix:
@@ -18,14 +18,11 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
-          submodules: recursive
-
-      - name: Install python3-venv
-        run: |
-          apt-get update
-          apt-get install -y python3-venv
+          # Note: We only want to check out one layer of submodules here because Mbed CE will automatically
+          # check out its submodules if they needed for the current build.
+          submodules: true
 
       - name: Build project for ${{ matrix.mbed_target }}
         run: |
